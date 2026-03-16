@@ -276,6 +276,14 @@ export const msteamsOnboardingAdapter: ChannelOnboardingAdapter = {
             appId,
             appPassword,
             tenantId,
+            // Reset auth type and related fields when re-entering credentials
+            // as client secret — otherwise the old authType takes precedence.
+            authType: "clientSecret",
+            certPemFile: undefined,
+            certKeyFile: undefined,
+            sendX5C: undefined,
+            ficClientId: undefined,
+            widAssertionFile: undefined,
           },
         },
       };
